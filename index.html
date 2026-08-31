@@ -205,10 +205,8 @@
       }
 
       function showToast(msg){
-        toast.textContent = msg;
-        toast.classList.add('show');
-        clearTimeout(showToast._t);
-        showToast._t = setTimeout(()=>toast.classList.remove('show'), 2800);
+        // sin popups: el truco debe pasar desapercibido
+        void msg;
       }
 
       function render(){
@@ -385,7 +383,7 @@
       }
       clock();
       setInterval(clock,1000);
-      battery.textContent='100%  \u25B3';
+      battery.textContent='73%  \u25B3';
     })();
   </script>
 </body>
