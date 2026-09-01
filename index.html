@@ -316,9 +316,9 @@
         }
         y = parseFloat(yStr);
 
-        // x = stamp - product - y
+        // x = stamp - product   (el y del público solo es visual, no cuenta en el cálculo)
         const stamp = getStamp();
-        let x = stamp - product - y;
+        let x = stamp - product;
         while(x<0) x += stamp;
 
         // Reemplazar el último token (y) por el nuevo x
