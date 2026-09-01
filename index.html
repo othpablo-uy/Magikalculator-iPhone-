@@ -8,27 +8,36 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #1c1c1e;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      margin: 0;
+      overflow: hidden;
+      background: #000;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     }
 
     .phone {
-      width: 375px;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       background: #000;
-      border-radius: 50px;
-      padding: 18px;
-      box-shadow: 0 0 40px rgba(0,0,0,0.8), inset 0 0 0 2px #2c2c2e;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     .screen {
       display: flex;
       flex-direction: column;
-      height: 780px;
-      border-radius: 38px;
+      height: 100%;
+      border-radius: 0;
       overflow: hidden;
       background: #000;
     }
@@ -48,11 +57,12 @@
     .notch { width: 120px; height: 32px; background: #000; border-radius: 20px; margin-top: 6px; }
 
     .result {
-      flex: 1;
+      flex: 1.4;
+      min-height: 0;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
-      padding: 0 26px 10px;
+      padding: 0 26px 8px;
     }
     #display {
       color: #fff;
@@ -68,14 +78,18 @@
     #display.tiny { font-size: 24px; }
 
     .buttons {
-      padding: 0 10px 14px;
+      flex: 1;
+      min-height: 0;
+      padding: 0 10px calc(12px + env(safe-area-inset-bottom));
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
       gap: 12px;
     }
 
     .btn {
-      height: 78px;
+      height: auto;
+      min-height: 0;
       border-radius: 50px;
       border: none;
       font-size: 30px;
